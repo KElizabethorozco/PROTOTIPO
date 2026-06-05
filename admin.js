@@ -1,4 +1,37 @@
 /* ===========================================================
+   SISTEMA DE CONTRASEÑA SEGURA PARA GITHUB PAGES
+   =========================================================== */
+(function() {
+    // 1. Define aquí la contraseña del dueño de la tienda
+    const CLAVE_CORRECTA = "Tiempo2026"; 
+
+    // 2. Solicitamos la contraseña mediante una ventana emergente
+    const contraseñaIngresada = prompt("Acceso Restringido - Escobar Fashion.\nPor favor, ingrese la contraseña de administrador:");
+
+    // 3. Validamos la respuesta
+    if (contraseñaIngresada !== CLAVE_CORRECTA) {
+        alert("Contraseña incorrecta. Acceso denegado.");
+        // Expulsamos al curioso mandándolo al catálogo de clientes
+        window.location.href = "index.html";
+    } else {
+        // Si la clave es correcta, removemos el bloqueo y mostramos el panel
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.getElementById("adminBody");
+            if (body) {
+                body.style.display = "block";
+                alert("¡Bienvenido Administrador!");
+            }
+        });
+    }
+})();
+
+/* ===========================================================
+   AQUÍ ABAJO CONTINÚA TODO TU CÓDIGO ANTERIOR DE ADMIN.JS...
+   (let products = []; function loadInitialData()...)
+   =========================================================== */
+
+
+/* ===========================================================
    ADMIN.JS - GESTIÓN DE PRODUCTOS CON ESTADO (ACT/AGO/DES)
    =========================================================== */
 
