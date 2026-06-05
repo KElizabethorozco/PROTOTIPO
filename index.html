@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ESCOBAR FASHION | Moda para Todos</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+<div class="logo">
+<i class="fa-solid fa-shirt"></i>
+<h2>ESCOBAR FASHION</h2>
+</div>
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+<a href="#promociones">Promociones</a>
+<a href="#catalogo">Catálogo</a>
+<a href="#opiniones">Opiniones</a>
+<a href="#faq">FAQ</a>
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+<div class="header-icons">
+
+<button id="favoritosBtn">
+<i class="fa-solid fa-heart"></i>
+<span id="favoritosCantidad">0</span>
+</button>
+
+<button id="carritoBtn">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cantidadCarrito">0</span>
+</button>
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section id="inicio" class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>Moda que inspira confianza</h1>
+
+<p>
+Encuentra las mejores prendas para toda ocasion.
+Diseños modernos, calidad garantizada y los mejores precios.
+</p>
+
+<a href="#catalogo" class="btn-principal">
+Comprar Ahora
+</a>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PROMOCIONES -->
+<!-- ========================= -->
+
+<section id="promociones" class="promociones">
+
+<h2>🔥 Promociones Especiales 🔥</h2>
+
+<div class="promo-grid">
+
+<div class="promo-card">
+<h3>50% OFF</h3>
+<p>En prendas seleccionadas</p>
+</div>
+
+<div class="promo-card">
+<h3>2x1</h3>
+<p>Camisetas exclusivas</p>
+</div>
+
+<div class="promo-card">
+<h3>ENVIOS GRATIS</h3>
+<p>Compras mayores a $50</p>
+</div>
+
+</div>
+
+<div class="contador">
+
+<h3>Oferta termina en:</h3>
+
+<div id="countdown">
+
+<span id="dias">00</span>
+<span id="horas">00</span>
+<span id="minutos">00</span>
+<span id="segundos">00</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CONTACTO -->
+<!-- ========================= -->
+
+<section id="contacto" class="contacto">
+
+<h2>Información de Contacto</h2>
+
+<div class="contacto-grid">
+
+<div class="info-card">
+<i class="fa-solid fa-location-dot"></i>
+<h3>Dirección</h3>
+<p>Pindal, Loja - Ecuador</p>
+</div>
+
+<div class="info-card">
+<i class="fa-solid fa-phone"></i>
+<h3>Telefono</h3>
+<p>+593 98 627 1198</p>
+</div>
+
+<div class="info-card">
+<i class="fa-solid fa-clock"></i>
+<h3>Horario</h3>
+<p>Lunes a Viernes: 08:00 am - 06:00 pm</p>
+<p>Sabado: 08:00 am - 05:00 pm</p>
+<p>Domingo: 08:00 am - 05:00 pm</p>
+</div>
+
+</div>
+
+<a
+href="https://wa.me/5939865555198"
+target="_blank"
+class="btn-whatsapp-contacto">
+
+Contactar por WhatsApp
+
+</a>
+
+</section>
+
+<!-- ========================= -->
+<!-- MAPA -->
+<!-- ========================= -->
+
+<section class="mapa">
+
+<h2>Nuestra Ubicación</h2>
+
+<iframe
+src="https://maps.google.com/maps?q=-4.11879453465556836,-80.1081472823279&z=17&output=embed"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</section>
+
+<!-- ========================= -->
+<!-- FILTROS -->
+<!-- ========================= -->
+
+<section class="filtros">
+
+<input
+type="text"
+id="buscador"
+placeholder="Buscar productos...">
+
+<select id="categoria">
+
+    <option value="todos">Todas las categori­as</option>
+
+    <option value="camisas">Camisas</option>
+
+    <option value="jeans">Jeans</option>
+
+    <option value="vestidos">Vestidos</option>
+
+    <option value="blusas">Blusas</option>
+
+    <option value="shorts">Shorts</option>
+
+</select>
+
+</section>
+
+<!-- ========================= -->
+<!-- CATÁLOGO -->
+<!-- ========================= -->
+
+<section id="catalogo">
+
+<h2>Nuestro Catálogo</h2>
+
+<div id="productos" class="productos-grid"> </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- OPINIONES -->
+<!-- ========================= -->
+
+<section id="opiniones">
+
+<h2>Opiniones de Clientes</h2>
+
+<div class="opiniones-grid">
+
+<div class="opinion">
+⭐⭐⭐⭐⭐
+<p>Excelente calidad y entrega rápida.</p>
+<strong>MarÃ­a</strong>
+</div>
+
+<div class="opinion">
+⭐⭐⭐⭐⭐
+<p>Muy buena atención al cliente.</p>
+<strong>Carlos</strong>
+</div>
+
+<div class="opinion">
+⭐⭐⭐⭐⭐
+<p>Me encantá la ropa.</p>
+<strong>Andrea</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SOBRE NOSOTROS -->
+<!-- ========================= -->
+
+<section class="sobre">
+
+<h2>Sobre Nosotros</h2>
+
+<p>
+
+ESCOBAR FASHION nace con el objetivo de ofrecer
+prendas modernas, cómodas y accesibles para toda la familia.
+
+Trabajamos con productos de calidad y las últimas tendencias
+para que siempre encuentres tu mejor estilo.
+
+</p>
+
+</section>
+
+<!-- ========================= -->
+<!-- FAQ -->
+<!-- ========================= -->
+
+<section id="faq">
+
+<h2>Preguntas Frecuentes</h2>
+
+<div class="faq-item">
+
+<button class="faq-question">
+📦 ¿Realizan enví­os?
+</button>
+
+<div class="faq-answer">
+Sí­, realizamos enví­os a todo Ecuador.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+💳 ¿Aceptan devoluciones?
+</button>
+
+<div class="faq-answer">
+Sí­, dentro de los primeros 3 dí­as, que estén en buen estado.
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PANEL CARRITO -->
+<!-- ========================= -->
+
+<div id="carritoPanel">
+
+    <div class="carrito-header">
+        <h2>Mi Carrito</h2>
+        <button id="cerrarCarrito">X</button>
+    </div>
+
+    <div id="listaCarrito"></div>
+
+    <div class="total">
+        <h3>Total: <span id="totalCarrito">$0</span></h3>
+    </div>
+
+    <div class="metodo-pago">
+
+        <h3>Metodo de Pago</h3>
+
+        <select id="metodoPago">
+            <option value="">Seleccione un metodo de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia Bancaria</option>
+        </select>
+
+        <div id="datosTransferencia" style="display:none;">
+            <h4>Datos para Transferencia</h4>
+            <p><strong>Banco:</strong> Banco Pichincha</p>
+            <p><strong>Titular:</strong> ESCOBAR FASHION</p>
+            <p><strong>Cuenta:</strong> 1234567890</p>
+            <p>Despues de realizar la transferencia, envie el comprobante por WhatsApp.</p>
+        </div>
+
+        <button id="comprarWhatsapp">
+            Finalizar Compra
+        </button>
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- FAVORITOS -->
+<!-- ========================= -->
+
+<div id="favoritosPanel">
+
+<h2>Favoritos ❤️</h2>
+
+<div id="listaFavoritos"></div>
+
+</div>
+
+<!-- ========================= -->
+<!-- BOTÃ“N WHATSAPP -->
+<!-- ========================= -->
+
+<a
+href="https://wa.me/59393325558"
+target="_blank"
+class="whatsapp-float">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- ========================= -->
+<!-- BOTÃ“N ARRIBA -->
+<!-- ========================= -->
+
+<button id="btnTop">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+<h3>ESCOBAR FASHION</h3>
+<p>Moda para toda la familia.</p>
+</div>
+
+<div>
+
+<h3>Contacto</h3>
+
+<p>📍 Pindal, Loja - Ecuador</p>
+<p>📞 +593 98 627 558</p>
+
+</div>
+
+<div>
+
+<h3>Redes Sociales</h3>
+
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+ 2026 ESCOBAR FASHION
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

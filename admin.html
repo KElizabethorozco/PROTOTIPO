@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel Administrativo - ESCOBAR FASHION</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+padding:30px;
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+color:#ff4d6d;
+}
+
+.admin-container{
+max-width:1200px;
+margin:auto;
+}
+
+.form-box{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+margin-bottom:30px;
+}
+
+.form-box h2{
+margin-bottom:20px;
+}
+
+.server-note{
+background:#fff7d6;
+border:1px solid #f1cf6b;
+border-radius:10px;
+color:#6b5200;
+font-size:14px;
+line-height:1.5;
+margin-bottom:20px;
+padding:12px 14px;
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:5px;
+font-weight:600;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+button{
+padding:12px 20px;
+border:none;
+background:#ff4d6d;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+button:hover{
+background:#ff3355;
+}
+
+.table-container{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+background:#ff4d6d;
+color:white;
+padding:15px;
+}
+
+table td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:center;
+}
+
+.product-img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.image-preview{
+display:none;
+width:140px;
+height:140px;
+object-fit:cover;
+border-radius:10px;
+margin-top:12px;
+border:1px solid #eee;
+}
+
+.edit-btn{
+background:#007bff;
+margin-right:5px;
+}
+
+.delete-btn{
+background:red;
+}
+
+.actions{
+display:flex;
+justify-content:center;
+gap:5px;
+}
+
+@media(max-width:768px){
+
+.actions{
+flex-direction:column;
+}
+
+}
+
+/* ===================================================
+   ESTILO MODERNO PARA EL BOTÓN DE DESCARGA JSON
+   =================================================== */
+.btn-download-json {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio perfecto entre el icono y el texto */
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #25D366 0%, #1cbd54 100%); /* Degradado verde tecnológico */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados sutiles */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+    transition: all 0.3s ease; /* Transición suave para todos los efectos */
+}
+
+/* Efecto al pasar el mouse por encima (Hover) */
+.btn-download-json:hover {
+    background: linear-gradient(135deg, #1cbd54 0%, #169c43 100%);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px); /* El botón se eleva sutilmente dando efecto 3D */
+}
+
+/* Efecto al hacer clic (Active) */
+.btn-download-json:active {
+    transform: translateY(1px); /* El botón baja simulando una pulsación mecánica */
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.2);
+}
+
+/* Animación sutil para el icono de guardado */
+.btn-download-json i {
+    font-size: 1.15rem;
+    transition: transform 0.3s ease;
+}
+
+/* El icono crece levemente cuando pasas el cursor por el botón */
+.btn-download-json:hover i {
+    transform: scale(1.12);
+}
+
+/* ===================================================
+   DISEÑO MODERNO PARA LA TABLA DE PRODUCTOS
+   =================================================== */
+
+/* Contenedor adaptativo para que no se corte en pantallas pequeñas */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+
+/* Estructura general de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Encabezados de la tabla (Th) */
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.8px;
+    padding: 16px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Celdas de contenido (Td) */
+td {
+    padding: 16px;
+    color: #495057;
+    border-bottom: 1px solid #f1f3f5;
+    vertical-align: middle; /* Alinea horizontalmente el texto con la imagen */
+}
+
+/* Efecto hover al pasar por cada fila */
+tr {
+    transition: background-color 0.2s ease;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* --- CONTROL Y UNIFORMIDAD DE IMÁGENES --- */
+table img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover; /* Evita que la imagen se estire o se deforme */
+    object-position: center;
+    border-radius: 10px; /* Bordes redondeados modernos */
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+/* Efecto sutil al pasar el cursor sobre la foto del producto */
+table img:hover {
+    transform: scale(1.06);
+}
+
+/* Estilo para las etiquetas de categorías (Badges) */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f1f3f5;
+    color: #495057;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* --- BOTONES DE ACCIÓN (Editar / Eliminar) --- */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Botón Editar */
+.edit-btn {
+    background-color: #e3fafc;
+    color: #0b7285;
+}
+
+.edit-btn:hover {
+    background-color: #c5f6fa;
+    color: #0c8599;
+}
+
+/* Botón Eliminar */
+.delete-btn {
+    background-color: #fff5f5;
+    color: #e03131;
+}
+
+.delete-btn:hover {
+    background-color: #ffe3e3;
+    color: #c92a2a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<h1>
+<i class="fas fa-user-shield"></i>
+Panel Administrativo
+</h1>
+
+<div class="form-box">
+
+<h2>Agregar / Editar Producto</h2>
+
+
+
+<input type="hidden" id="productId">
+
+<div class="form-group">
+<label>Nombre</label>
+<input type="text" id="name">
+</div>
+
+<div class="form-group">
+<label>Precio</label>
+<input type="number" id="price">
+</div>
+
+<div class="form-group">
+<label>Stock</label>
+<input type="number" id="stock">
+</div>
+
+
+<div class="form-group">
+    <label for="status">Estado del Producto:</label>
+    <select id="status">
+        <option value="activado">🟢 Activado (Disponible)</option>
+        <option value="agotado">🟡 Agotado (Sin Stock)</option>
+        <option value="desactivado">🔴 Desactivado (Oculto)</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+<label>Categoría</label>
+<input type="text" id="category">
+</div>
+
+<div class="form-group">
+<label>URL Imagen</label>
+<input type="text" id="image">
+</div>
+
+<div class="form-group">
+<label>Subir imagen desde el dispositivo</label>
+<input type="file" id="imageFile" accept="image/*">
+<img id="imagePreview" class="image-preview" alt="Vista previa">
+</div>
+
+<div class="form-group">
+<label>Descripción</label>
+<textarea id="description"></textarea>
+</div>
+
+<button onclick="saveProduct()">
+Guardar Producto
+
+<button class="btn-download-json" onclick="downloadJsonFile()">
+    <i class="fas fa-save"></i> Guardar y Descargar products.json
+
+</button>
+
+</div>
+
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tableProducts">
+            </tbody>
+    </table>
+</div>
+<thead>
+
+
+
+<tbody id="tableProducts">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

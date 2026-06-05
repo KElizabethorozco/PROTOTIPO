@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1001,
+    "name": "Camiseta Premium",
+    "price": 19.99,
+    "stock": 15,
+    "category": "camisas",
+    "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518",
+    "description": "Diseno moderno y comodo.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 1002,
+    "name": "Camisa Ejecutiva Premium",
+    "price": 29.99,
+    "stock": 20,
+    "category": "camisas",
+    "image": "https://images.unsplash.com/photo-1603252109303-2751441dd157",
+    "description": "Camisa elegante de manga larga confeccionada en algodon de alta calidad, ideal para oficina y eventos formales.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 1003,
+    "name": "Jeans Slim Fit",
+    "price": 34.99,
+    "stock": 15,
+    "category": "jeans",
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d",
+    "description": "Pantalon jean moderno con corte ajustado, comodo y resistente para uso diario.",
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ]
+  },
+  {
+    "id": 1004,
+    "name": "Short Deportivo Flex",
+    "price": 19.99,
+    "stock": 18,
+    "category": "shorts",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "description": "Short deportivo ligero y transpirable, perfecto para entrenamiento y actividades al aire libre.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 1005,
+    "name": "Vestido Floral Elegante",
+    "price": 39.99,
+    "stock": 12,
+    "category": "vestidos",
+    "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c",
+    "description": "Vestido moderno con estampado floral, ideal para reuniones, fiestas y ocasiones especiales.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 1006,
+    "name": "Blusa Casual Chic",
+    "price": 24.99,
+    "stock": 22,
+    "category": "blusas",
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+    "description": "Blusa elegante y comoda para combinar con jeans o faldas, ideal para cualquier ocasion.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 1007,
+    "name": "Short Denim Fashion",
+    "price": 21.99,
+    "stock": 16,
+    "category": "shorts",
+    "image": "https://images.unsplash.com/photo-1506629905607-d9d82f0d6f1e",
+    "description": "Short de mezclilla moderno con diseno juvenil y comodo para los dias soleados.",
+    "sizes": [
+      "26",
+      "28",
+      "30",
+      "32"
+    ]
+  }
+]

@@ -1,0 +1,1806 @@
+/* ==========================================
+   ESCOBAR FASHION
+   STYLES.CSS - PARTE 1
+   ========================================== */
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   VARIABLES GLOBALES
+   ========================================== */
+
+:root{
+
+    --primary:#000000;
+    --secondary:#ffffff;
+
+    --gold:#d4af37;
+    --gold-hover:#b8941f;
+
+    --gray:#f5f5f5;
+    --gray-dark:#666666;
+
+    --success:#25D366;
+    --danger:#ff4d4d;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.12);
+
+    --shadow-hover:
+    0 15px 40px rgba(0,0,0,.20);
+
+    --radius:15px;
+
+    --transition:.35s ease;
+}
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#fff;
+
+    color:#222;
+
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   SCROLL PERSONALIZADO
+   ========================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--gold-hover);
+}
+
+/* ==========================================
+   ENLACES
+   ========================================== */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+/* ==========================================
+   HEADER PREMIUM
+   ========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:85px;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 6%;
+
+    z-index:1000;
+
+    box-shadow:
+    0 2px 15px rgba(0,0,0,.05);
+}
+
+/* ==========================================
+   LOGO
+   ========================================== */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+
+    color:var(--gold);
+
+    font-size:32px;
+}
+
+.logo h2{
+
+    color:var(--primary);
+
+    font-size:1.5rem;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+/* ==========================================
+   MENU
+   ========================================== */
+
+nav{
+
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+
+    font-weight:600;
+
+    position:relative;
+
+    transition:var(--transition);
+}
+
+nav a:hover{
+
+    color:var(--gold);
+}
+
+nav a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.3s;
+}
+
+nav a:hover::after{
+
+    width:100%;
+}
+
+/* ==========================================
+   ICONOS HEADER
+   ========================================== */
+
+.header-icons{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.header-icons button{
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:white;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+    transition:var(--transition);
+
+    position:relative;
+}
+
+.header-icons button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.15);
+}
+
+.header-icons i{
+
+    font-size:20px;
+}
+
+#carritoBtn i{
+    color:#222;
+}
+
+#favoritosBtn i{
+    color:#ff4d6d;
+}
+
+/* ==========================================
+   CONTADORES
+   ========================================== */
+
+#cantidadCarrito,
+#favoritosCantidad{
+
+    position:absolute;
+
+    top:-5px;
+    right:-5px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+#cantidadCarrito{
+
+    background:var(--gold);
+}
+
+#favoritosCantidad{
+
+    background:#ff4d6d;
+}
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+.hero{
+
+    height:100vh;
+
+    background:
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1800')
+    center center/cover no-repeat;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.65)
+    );
+}
+
+/* ==========================================
+   CONTENIDO HERO
+   ========================================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    max-width:800px;
+
+    padding:20px;
+
+    animation:fadeUp 1s ease;
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    line-height:1.1;
+}
+
+.hero-content p{
+
+    font-size:1.2rem;
+
+    margin-bottom:35px;
+
+    color:#f5f5f5;
+}
+
+/* ==========================================
+   BOTON HERO
+   ========================================== */
+
+.btn-principal{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:var(--gold);
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.btn-principal:hover{
+
+    background:var(--gold-hover);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 30px rgba(212,175,55,.40);
+}
+
+/* ==========================================
+   ANIMACION HERO
+   ========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ==========================================
+   TITULOS GENERALES
+   ========================================== */
+
+section h2{
+
+    text-align:center;
+
+    font-size:2.3rem;
+
+    font-weight:800;
+
+    margin-bottom:50px;
+
+    color:#111;
+}
+
+/* ==========================================
+   ESPACIADO GENERAL
+   ========================================== */
+
+section{
+
+    padding:100px 8%;
+}
+
+/* ==========================================
+   STYLES.CSS - PARTE 2
+   PROMOCIONES
+   CONTACTO
+   MAPA
+   FILTROS
+   WHATSAPP
+   ========================================== */
+
+/* ==========================================
+   PROMOCIONES
+   ========================================== */
+
+.promociones{
+
+    background:
+    linear-gradient(
+    135deg,
+    #fafafa,
+    #f3f3f3
+    );
+}
+
+.promo-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.promo-card{
+
+    background:white;
+
+    padding:40px 30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.4s;
+}
+
+.promo-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.5),
+    transparent
+    );
+
+    transition:.7s;
+}
+
+.promo-card:hover::before{
+
+    left:100%;
+}
+
+.promo-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.15);
+}
+
+.promo-card h3{
+
+    font-size:2rem;
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+    font-weight:800;
+}
+
+.promo-card p{
+
+    color:#555;
+
+    font-size:1rem;
+}
+
+/* ==========================================
+   CONTADOR
+   ========================================== */
+
+.contador{
+
+    margin-top:60px;
+
+    text-align:center;
+}
+
+.contador h3{
+
+    margin-bottom:25px;
+
+    font-size:1.4rem;
+}
+
+#countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+#countdown span{
+
+    width:90px;
+    height:90px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:20px;
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    color:var(--gold);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ==========================================
+   CONTACTO
+   ========================================== */
+
+.contacto{
+
+    background:white;
+}
+
+.contacto-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+.info-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.4s;
+}
+
+.info-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 20px 35px rgba(0,0,0,.12);
+}
+
+.info-card i{
+
+    font-size:45px;
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+}
+
+.info-card h3{
+
+    margin-bottom:15px;
+
+    font-size:1.3rem;
+}
+
+.info-card p{
+
+    color:#666;
+
+    line-height:1.8;
+}
+
+/* ==========================================
+   BOTON WHATSAPP CONTACTO
+   ========================================== */
+
+.btn-whatsapp-contacto{
+
+    display:block;
+
+    width:max-content;
+
+    margin:auto;
+
+    padding:16px 35px;
+
+    background:#25D366;
+
+    color:white;
+
+    font-weight:700;
+
+    border-radius:50px;
+
+    transition:.3s;
+}
+
+.btn-whatsapp-contacto:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(37,211,102,.30);
+}
+
+/* ==========================================
+   MAPA
+   ========================================== */
+
+.mapa{
+
+    background:#f8f8f8;
+}
+
+.mapa iframe{
+
+    width:100%;
+
+    height:500px;
+
+    border:none;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+}
+
+/* ==========================================
+   FILTROS
+   ========================================== */
+
+.filtros{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    background:white;
+}
+
+#buscador{
+
+    width:400px;
+
+    max-width:100%;
+
+    padding:15px 20px;
+
+    border:2px solid #ddd;
+
+    border-radius:50px;
+
+    outline:none;
+
+    font-size:1rem;
+
+    transition:.3s;
+}
+
+#buscador:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:
+    0 0 15px rgba(212,175,55,.20);
+}
+
+#categoria{
+
+    padding:15px 20px;
+
+    border-radius:50px;
+
+    border:2px solid #ddd;
+
+    outline:none;
+
+    cursor:pointer;
+
+    min-width:220px;
+
+    font-size:1rem;
+
+    transition:.3s;
+}
+
+#categoria:focus{
+
+    border-color:var(--gold);
+}
+
+/* ==========================================
+   BOTON WHATSAPP FLOTANTE
+   ========================================== */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:70px;
+    height:70px;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:35px;
+
+    z-index:999;
+
+    box-shadow:
+    0 10px 30px rgba(37,211,102,.40);
+
+    animation:pulseWhatsapp 2s infinite;
+}
+
+.whatsapp-float:hover{
+
+    transform:scale(1.1);
+}
+
+@keyframes pulseWhatsapp{
+
+    0%{
+
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,.50);
+    }
+
+    70%{
+
+        box-shadow:
+        0 0 0 20px rgba(37,211,102,0);
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+/* ==========================================
+   BOTON VOLVER ARRIBA
+   ========================================== */
+
+#btnTop{
+
+    position:fixed;
+
+    bottom:110px;
+    right:30px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+
+    z-index:998;
+
+    transition:.3s;
+}
+
+#btnTop:hover{
+
+    transform:
+    translateY(-5px);
+}
+
+/* ==========================================
+   EFECTOS GENERALES
+   ========================================== */
+
+.fade-in{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+    transition:.8s;
+}
+
+.fade-in.show{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+/* ==========================================
+   RESPONSIVE TABLET
+   ========================================== */
+
+@media(max-width:992px){
+
+    .promo-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .contacto-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE MOVIL
+   ========================================== */
+
+@media(max-width:768px){
+
+    .promo-grid,
+    .contacto-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    #countdown{
+
+        gap:10px;
+    }
+
+    #countdown span{
+
+        width:70px;
+        height:70px;
+
+        font-size:1.3rem;
+    }
+
+    .mapa iframe{
+
+        height:350px;
+    }
+
+    .whatsapp-float{
+
+        width:60px;
+        height:60px;
+
+        font-size:30px;
+    }
+
+}
+
+/* ==========================================
+   FIN PARTE 2
+   ========================================== */
+
+
+/* ==========================================
+   STYLES.CSS - PARTE 3
+   CATALOGO PREMIUM
+   CARRITO
+   FAVORITOS
+   OPINIONES
+   FAQ
+   FOOTER
+   ========================================== */
+
+/* ==========================================
+   CATALOGO
+   ========================================== */
+
+#catalogo{
+    background:#fafafa;
+}
+
+.productos-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+    margin-top:40px;
+}
+
+/* ==========================================
+   TARJETA PRODUCTO
+   ========================================== */
+
+.producto{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+}
+
+.producto:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.15);
+}
+
+/* ==========================================
+   FAVORITO
+   ========================================== */
+
+.favorito{
+
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    width:45px;
+    height:45px;
+
+    background:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:2;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.10);
+}
+
+.favorito i{
+
+    color:#ff4d6d;
+
+    font-size:20px;
+}
+
+.favorito:hover{
+
+    transform:scale(1.1);
+}
+
+/* ==========================================
+   GALERIA
+   ========================================== */
+
+.galeria{
+
+    height:350px;
+
+    overflow:hidden;
+}
+
+.galeria img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.producto:hover .galeria img{
+
+    transform:scale(1.08);
+}
+
+/* ==========================================
+   CONTENIDO PRODUCTO
+   ========================================== */
+
+.producto h3{
+
+    font-size:1.3rem;
+
+    padding:20px 20px 10px;
+
+    font-weight:700;
+}
+
+.descripcion{
+
+    color:#666;
+
+    padding:0 20px;
+
+    line-height:1.6;
+
+    min-height:60px;
+}
+
+.precio{
+
+    color:var(--gold);
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    padding:15px 20px;
+}
+
+.stock{
+
+    padding:0 20px 15px;
+
+    font-weight:600;
+
+    color:#2d7d46;
+}
+
+.stock-bajo{
+
+    color:#ff6b00;
+}
+
+.stock-agotado{
+
+    color:red;
+}
+
+/* ==========================================
+   TALLAS
+   ========================================== */
+
+.tallas{
+
+    width:calc(100% - 40px);
+
+    margin:10px 20px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    font-size:1rem;
+}
+
+/* ==========================================
+   CANTIDAD
+   ========================================== */
+
+.cantidad{
+
+    width:calc(100% - 40px);
+
+    margin:10px 20px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    font-size:1rem;
+}
+
+/* ==========================================
+   BOTON AGREGAR
+   ========================================== */
+
+.agregar{
+
+    width:calc(100% - 40px);
+
+    margin:20px;
+
+    border:none;
+
+    padding:15px;
+
+    background:#000;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.agregar:hover{
+
+    background:var(--gold);
+
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   CARRITO LATERAL
+   ========================================== */
+
+#carritoPanel{
+
+    position:fixed;
+
+    top:0;
+    right:-420px;
+
+    width:420px;
+
+    max-width:100%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:9999;
+
+    box-shadow:
+    -5px 0 30px rgba(0,0,0,.20);
+
+    transition:.4s;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+#carritoPanel.activo{
+
+    right:0;
+}
+
+.carrito-header{
+
+    padding:25px;
+
+    background:#000;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.carrito-header button{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+}
+
+#listaCarrito{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:20px;
+}
+
+.item-carrito{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #eee;
+}
+
+.item-carrito img{
+
+    width:80px;
+    height:80px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+}
+
+.total{
+
+    padding:20px;
+
+    border-top:1px solid #eee;
+
+    background:#fafafa;
+}
+
+.total h3{
+
+    font-size:1.4rem;
+}
+
+#comprarWhatsapp{
+
+    margin:20px;
+
+    border:none;
+
+    padding:15px;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:12px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+/* ==========================================
+   FAVORITOS PANEL
+   ========================================== */
+
+#favoritosPanel{
+
+    position:fixed;
+
+    left:-350px;
+
+    top:0;
+
+    width:350px;
+
+    max-width:100%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:9998;
+
+    transition:.4s;
+
+    box-shadow:
+    5px 0 30px rgba(0,0,0,.15);
+
+    overflow-y:auto;
+
+    padding:20px;
+}
+
+#favoritosPanel.activo{
+
+    left:0;
+}
+
+/* ==========================================
+   OPINIONES
+   ========================================== */
+
+#opiniones{
+
+    background:white;
+}
+
+.opiniones-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.opinion{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.opinion:hover{
+
+    transform:
+    translateY(-8px);
+}
+
+.opinion p{
+
+    margin:15px 0;
+
+    color:#666;
+}
+
+.opinion strong{
+
+    color:var(--gold);
+}
+
+/* ==========================================
+   SOBRE NOSOTROS
+   ========================================== */
+
+.sobre{
+
+    background:#f7f7f7;
+
+    text-align:center;
+}
+
+.sobre p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    line-height:2;
+
+    color:#555;
+
+    font-size:1.05rem;
+}
+
+/* ==========================================
+   FAQ
+   ========================================== */
+
+#faq{
+
+    background:white;
+}
+
+.faq-item{
+
+    max-width:900px;
+
+    margin:15px auto;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+.faq-question{
+
+    width:100%;
+
+    padding:20px;
+
+    border:none;
+
+    background:#000;
+
+    color:white;
+
+    font-size:1rem;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+.faq-answer{
+
+    display:none;
+
+    padding:20px;
+
+    background:white;
+
+    color:#555;
+}
+
+.faq-item.activo .faq-answer{
+
+    display:block;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer{
+
+    background:#000;
+
+    color:white;
+
+    padding-top:60px;
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:40px;
+
+    padding:0 8% 50px;
+}
+
+.footer-container h3{
+
+    margin-bottom:20px;
+
+    color:var(--gold);
+}
+
+.footer-container p{
+
+    color:#ccc;
+
+    line-height:1.8;
+}
+
+.footer-container a{
+
+    display:block;
+
+    color:#ccc;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+}
+
+.footer-container a:hover{
+
+    color:var(--gold);
+}
+
+.copyright{
+
+    text-align:center;
+
+    padding:25px;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    color:#aaa;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media(max-width:768px){
+
+    .productos-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .galeria{
+
+        height:280px;
+    }
+
+    #carritoPanel{
+
+        width:100%;
+    }
+
+    #favoritosPanel{
+
+        width:100%;
+    }
+
+    .footer-container{
+
+        text-align:center;
+    }
+}
+
+@media(max-width:480px){
+
+    .producto h3{
+
+        font-size:1.1rem;
+    }
+
+    .precio{
+
+        font-size:1.5rem;
+    }
+
+    .opinion{
+
+        padding:20px;
+    }
+}
+
+/* ==========================================
+   FIN PARTE 3
+   ========================================== */
+   
+   
+   .mensaje-toast{
+
+    position:fixed;
+
+    top:100px;
+    right:20px;
+
+    background:#25D366;
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:10px;
+
+    z-index:99999;
+
+    opacity:0;
+
+    transform:translateX(50px);
+
+    transition:.3s;
+}
+
+.mensaje-toast.mostrar{
+
+    opacity:1;
+
+    transform:translateX(0);
+}
+
+.item-carrito button{
+
+    margin-top:10px;
+
+    background:red;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+#btnTop{
+    display:none;
+}
+
+.agregar:disabled{
+    cursor:not-allowed;
+    opacity:.7;
+}
+
+.faq-item{
+    transition:.3s;
+}
+
+.faq-item.activo{
+    transform:translateY(-2px);
+}
+
+
+/* --- ESTILOS DE ETIQUETAS DE ESTADO (BADGES) --- */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Color Verde si está Activado */
+.status-activado {
+    background-color: #e6fcf5;
+    color: #0ca678;
+}
+
+/* Color Amarillo si está Agotado */
+.status-agotado {
+    background-color: #fff9db;
+    color: #f59f00;
+}
+
+/* Color Rojo si está Desactivado */
+.status-desactivado {
+    background-color: #fff5f5;
+    color: #f03e3e;
+}
+
+/* --- ESTILOS PARA PRENDAS AGOTADAS EN LA TIENDA --- */
+
+/* Hace que la tarjeta del producto se vea ligeramente más clara o apagada */
+.card-agotada {
+    opacity: 0.75;
+    filter: grayscale(20%); /* Le quita un poco de color para denotar falta de stock */
+}
+
+/* Etiqueta de aviso encima de la foto del producto */
+.badge-agotado-frontal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e03131;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Botón de compra cuando está bloqueado por falta de stock */
+.btn-comprar.btn-agotado {
+    background-color: #ced4da !important; /* Gris claro */
+    color: #495057 !important;
+    cursor: not-allowed; /* Cambia el cursor por un símbolo de prohibido */
+    box-shadow: none !important;
+    transform: none !important;
+}
